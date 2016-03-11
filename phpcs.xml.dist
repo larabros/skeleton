@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name=":vendor">
-    <description>PHPCS configuration for :vendor</description>
+<ruleset name=":vendor_name">
+    <description>PHPCS configuration for :vendor_name :package_name</description>
 
     <file>src</file>
 

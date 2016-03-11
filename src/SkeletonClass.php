@@ -1,6 +1,6 @@
 <?php
 
-namespace League\Skeleton;
+namespace :vendor_ns\:package_ns\Skeleton;
 
 class SkeletonClass
 {
