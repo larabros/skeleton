@@ -43,7 +43,7 @@ class Wizard
             static::$answers[':vendor_ns'].'/'.static::$answers[':package_ns'],
             $json
         );
-        self::$packageName  = [$vendorClass, $packageClass];
+        // self::$packageName  = [$vendorClass, $packageClass];
         // Update composer definition
         $json->write($composerDefinition);
         $io->write("<info>composer.json is created.\n</info>");
