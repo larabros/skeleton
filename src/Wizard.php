@@ -126,7 +126,7 @@ class Wizard
               return $values[$match[1]];
             };
 
-            $contents = preg_replace_callback($expr, $callback, $string);
+            $contents = preg_replace_callback($expr, $callback, $contents);
             file_put_contents($file, $contents);
         };
 
