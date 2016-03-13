@@ -122,8 +122,8 @@ class Wizard
             $expr = '/\b('.implode('|', $quotedSearches).')\b/';
 
             $values = static::$answers;
-            $callback = function($match) use ($answers) {
-              return $answers[$match[1]];
+            $callback = function($match) use ($values) {
+              return $values[$match[1]];
             };
 
             $contents = preg_replace_callback($expr, $callback, $string);
