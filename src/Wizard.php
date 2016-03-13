@@ -40,7 +40,7 @@ class Wizard
         file_put_contents($basePath.'composer.json', file_get_contents($basePath.'composer.json.stub'));
         $json               = new JsonFile(Factory::getComposerFile());
         $composerDefinition = self::getDefinition(
-            $answers[':vendor_ns'].'/'.$answers[':package_ns'],
+            static::$answers[':vendor_ns'].'/'.static::$answers[':package_ns'],
             $json
         );
         self::$packageName  = [$vendorClass, $packageClass];
