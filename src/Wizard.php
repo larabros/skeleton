@@ -9,7 +9,7 @@ use Composer\Script\Event;
 
 class Wizard
 {
-    private static $keys = [;
+    private static $keys = [
         ':author_name',
         ':author_username',
         ':author_website',
