@@ -1,6 +1,6 @@
 {
-    "name": ":vendor_name/:package_name",
-    "type": "library",
+    "name": "larabros/skeleton",
+    "type": "project",
     "description": ":package_description",
     "keywords": [
         ":vendor_name",
@@ -35,6 +35,7 @@
         }
     },
     "scripts": {
+        "post-create-project-cmd": ["Larabros\\Skeleton\\Wizard::init"],
         "test": "phpunit"
     },
     "extra": {
