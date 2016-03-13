@@ -27,7 +27,7 @@ class Wizard
     public static function init(Event $event)
     {
         $io       = $event->getIO();
-        $basePath = realpath(__DIR__.'/../');
+        $basePath = realpath(__DIR__.'/../').'/';
 
         // Iterate through `$keys` and get the answers
         foreach (static::$keys as $key) {
@@ -37,17 +37,16 @@ class Wizard
 
         self::recursiveJob($basePath, self::rename());
 
-        $json = new JsonFile(Factory::getComposerFile());
+        file_put_contents($basePath.'composer.json', file_get_contents($basePath.'composer.json.stub'));
+        $json               = new JsonFile(Factory::getComposerFile());
         $composerDefinition = self::getDefinition(
-            '',
-            '',
             $answers[':vendor_ns'].'/'.$answers[':package_ns'],
-            ''
+            $json
         );
-        self::$packageName = [$vendorClass, $packageClass];
+        self::$packageName  = [$vendorClass, $packageClass];
         // Update composer definition
         $json->write($composerDefinition);
-        $io->write("<info>composer.json for {$composerDefinition['name']} is created.\n</info>");
+        $io->write("<info>composer.json is created.\n</info>");
     }
 
     /**
@@ -91,7 +90,7 @@ class Wizard
      *
      * @return array
      */
-    private static function getDefinition($vendor, $package, $packageName, JsonFile $json)
+    private static function getDefinition($packageName, JsonFile $json)
     {
         $composerDefinition = $json->read();
         unset($composerDefinition['scripts']['post-create-project-cmd']);

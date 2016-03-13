@@ -1,18 +1,18 @@
 {
-    "name": "larabros/skeleton",
+    "name": ":vendor_name/:package_name",
     "type": "project",
-    "description": "A skeleton repository for Larabros packages",
+    "description": ":package_description",
     "keywords": [
-        "larabros",
-        "skeleton"
+        ":vendor_name",
+        ":package_name"
     ],
-    "homepage": "https://github.com/larabros/skeleton",
+    "homepage": "https://github.com/:vendor_name/:package_name",
     "license": "MIT",
     "authors": [
         {
-            "name": "Hassan Khan",
-            "email": "contact@hassankhan.me",
-            "homepage": "http://hassankhan.me",
+            "name": ":author_name",
+            "email": ":author_email",
+            "homepage": ":author_website",
             "role": "Developer"
         }
     ],
@@ -26,16 +26,15 @@
     },
     "autoload": {
         "psr-4": {
-            ":Larabros\\Skeleton\\": "src"
+            ":vendor_ns\\:package_ns\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":Larabros\\Skeleton\\": "tests"
+            ":vendor_ns\\:package_ns\\": "tests"
         }
     },
     "scripts": {
-        "post-create-project-cmd": ["Larabros\\Skeleton\\Wizard::init"],
         "test": "phpunit"
     },
     "extra": {
