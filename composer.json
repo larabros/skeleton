@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            ":Larabros\\Skeleton\\": "src"
+            "Larabros\\Skeleton\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":Larabros\\Skeleton\\": "tests"
+            "Larabros\\Skeleton\\": "tests"
         }
     },
     "scripts": {
